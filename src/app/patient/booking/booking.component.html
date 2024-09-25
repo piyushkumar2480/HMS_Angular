@@ -1,0 +1,75 @@
+<!-- <app-uppernavbar></app-uppernavbar> -->
+<app-navbar></app-navbar>
+
+
+
+    <div class="row">
+        <div class="sidebar col-2">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <form class="form col-6" #bookingForm="ngForm" (ngSubmit)="bookAppointment()" novalidate>
+            <h1>Book an Appointment</h1>
+            
+
+            <div>
+                <mat-form-field class="form-group col-md-7">
+                    <mat-label>Reason</mat-label>
+                    <mat-select name="reason" [(ngModel)]="booking.reason" required>
+                        <mat-option value="General">General</mat-option>
+                        <mat-option value="Heart">Heart</mat-option>
+                        <mat-option value="Kidney">Kidney</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <span>
+                <img class="doc-img col-md-5" src="../../../assets/images/doc1.jpg" alt="">
+            </span>
+            <div>
+                <mat-form-field class="col-md-7">
+                    <mat-label>Doctor</mat-label>
+                    <mat-select name="doctorName" [(ngModel)]="booking.doctorName">
+                        <mat-option value="Divyesh">Divyesh</mat-option>
+                        <mat-option value="Piyush">Piyush</mat-option>
+                        <mat-option value="Nikita">Nikita</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field color="accent" class="col-md-7">
+                    <mat-label>Appointment Date</mat-label>
+                    <input matInput [matDatepicker]="picker" name="date" [(ngModel)]="booking.date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="col-md-7">
+                    <mat-label>Appointment Time</mat-label>
+                    <mat-select name="time" [(ngModel)]="booking.time">
+                        <mat-option value="9">9am-10 am</mat-option>
+                        <mat-option value="10">10am-11 am</mat-option>
+                        <mat-option value="11">11am-12pm</mat-option>
+                        <mat-option value="11">12pm-1pm</mat-option>
+                        <mat-option value="11">2pm-3pm</mat-option>
+                        <mat-option value="11">3pm-4pm</mat-option>
+                        <mat-option value="11">4pm-5pm</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-7">
+                <button class="form-control" mat-raised-button color="primary" type="submit">Book</button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<app-homefooter></app-homefooter>

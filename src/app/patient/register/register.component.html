@@ -1,0 +1,121 @@
+<app-uppernavbar></app-uppernavbar>
+<app-navigationbar></app-navigationbar>
+
+<form class="form col-md-8" #registerform="ngForm" (ngSubmit)="registerPatient()"  novalidate >
+    <h1>Patient Registration Form</h1>
+    <div>
+        <mat-form-field class="col-md-6">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" class="" [(ngModel)]="patient.name" name="name" required>
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+            class="" [(ngModel)]="patient.email" name="email" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="col-md-6">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" class="" [(ngModel)]="patient.password" name="password" required>
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" class="" #cpassword  required>
+        </mat-form-field>
+    </div>
+    <!-- <div >
+    <mat-form-field >
+		<input matInput placeholder="New password" formControlName="password" required>
+		<mat-error *ngIf="myForm.hasError('required', 'password')">
+			Please enter your newpassword
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input matInput placeholder="Confirm password" formControlName="confirmPassword" [errorStateMatcher]="matcher">
+  		<mat-error *ngIf="myForm.hasError('notSame')">
+			Passwords do not match
+		</mat-error>  
+	</mat-form-field>
+</div> -->
+
+    <div>
+        <mat-form-field class="col-md-6">
+            <mat-label>Address</mat-label>
+            <input matInput type="text" class="" (click)="checkPassword(cpassword.value)" name="address" [(ngModel)]="patient.address" required>
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+            <mat-label>Phone</mat-label>
+            <input matInput type="text" class="" name="primary_phoneNo" [(ngModel)]="patient.primary_phoneNo" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="col-md-6">
+            <mat-label>Alternate Phone number</mat-label>
+            <input matInput type="text" class="" name="alt_phoneNo" [(ngModel)]="patient.alt_phoneNo">
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+            <mat-label>Gender</mat-label>
+            <mat-select [(ngModel)]="patient.gender" name="gender" required>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="other">Other</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+    <div>
+        <mat-form-field class="col-md-6" color="accent">
+            <mat-label>Date of birth</mat-label>
+            <input matInput [matDatepicker]="picker" name="dob" [(ngModel)]="patient.dob" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+            <mat-label>Blood Group</mat-label>
+            <mat-select [(ngModel)]="patient.blood_grp" name="blood_grp" required>
+                <mat-option value="A+">A+</mat-option>
+                <mat-option value="A-">A-</mat-option>
+                <mat-option value="B+">B+</mat-option>
+                <mat-option value="B-">B-</mat-option>
+                <mat-option value="AB+">AB+</mat-option>
+                <mat-option value="AB-">AB-</mat-option>
+                <mat-option value="O+">O+</mat-option>
+                <mat-option value="O-">O-</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- <mat-form-field class="col-md-6">
+            <mat-label>Blood Group</mat-label>
+            <mat-select [(ngModel)]="patient.blood_grp" name="blood_grp">
+                <mat-option value="AB">AB</mat-option>
+                <mat-option value="B">B</mat-option>
+                <mat-option value="AB">AB</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+    
+    </div>
+
+    <mat-checkbox disabled class="form-group col-md-12" [checked]="true">I agree to the terms and conditions <a
+            href="https://www.website.com/terms-and-conditions/" >Read T&C</a></mat-checkbox>
+
+    <div class="col-md-12">
+     
+        <button class="form-control" type="submit" mat-raised-button>Register</button>
+
+    </div>
+
+    <div class="already">
+        Already a user? <a routerLink='/login'>Login</a>
+    </div>
+
+</form>

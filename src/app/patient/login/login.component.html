@@ -1,0 +1,39 @@
+
+ <app-uppernavbar></app-uppernavbar>
+ <app-navigationbar></app-navigationbar>
+
+<div class="login">
+<form class="form col-md-3" #loginform="ngForm" (ngSubmit)="loginPatient()" novalidate>
+  <div class="user">
+    <img class="pic" src="../../../assets/icons/user-login.png">
+  </div>
+  <h1>Patient login</h1>
+
+  
+  <div>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" class="" [(ngModel)]="email" name="email">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password" [(ngModel)]="password" class="">
+    </mat-form-field>
+  </div>
+
+  
+
+  <div>
+    Forgot Password? <a href="#">Reset here</a>
+  </div>
+
+  <button mat-raised-button color="primary" type="submit">Login</button>
+  <div class="new">
+    New User? <a routerLink='/register'>Sign Up</a>
+  </div>
+</form>
+
+</div>

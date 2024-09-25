@@ -1,0 +1,34 @@
+.flag{
+    margin-left: 7px;
+}
+.latest{
+    margin-left:10px;
+}
+marquee{
+    
+   color: brown;
+}
+
+.row1{
+    background-color: white;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    /* margin-right: -10px; */
+    /* margin-left: 0.5px; */
+    margin:auto;
+    text-align: left;
+
+    margin-right: auto;
+}
+.row2{
+    background-color: white;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    /* margin-right: -10px; */
+    /* margin-left: 0.5px; */
+    margin:auto;
+    text-align: left;
+
+    margin-right: auto;
+
+}

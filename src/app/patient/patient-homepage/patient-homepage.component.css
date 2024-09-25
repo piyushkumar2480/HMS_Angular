@@ -1,0 +1,151 @@
+@charset "UTF-8";
+*, *:before, *:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 290px;
+  height: 395px;
+  padding: 20px 20px;
+  
+  background-position: center center;
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  background-color: black;
+}
+figure:before, figure:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+figure:before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+figure:after {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+figure:hover {
+  background-size: 175%;
+}
+
+figure:hover .date {
+  bottom: -59px;
+}
+figure:hover figcaption {
+  transform: translateY(-120%);
+}
+
+
+
+
+figure figcaption {
+
+  color: white;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+  
+}
+figure figcaption h4 {
+  margin: 0 0 25px;
+  font-family: "Source Code Pro", sans-serif;
+  font-size: 40px;
+  line-height: 1.35;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+  
+}
+/* figure figcaption h4 > span {
+    
+  background-color: rgba(102, 157, 246, 0.9);
+  border-radius: 5px;
+} */
+figure figcaption p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.home-card{
+    margin: 50px;
+}
+
+
+
+
+.figure1:hover:after {
+    content: "Book now";
+    background-color: rgba(102, 157, 246, 0.9);
+    color: white;
+    font-size: 32px;
+    z-index: 2;
+  }
+
+
+  .figure2:hover:after,.figure3:hover:after {
+    content: "View Now";
+    background-color: rgba(102, 157, 246, 0.9);
+    color: white;
+    font-size: 32px;
+    z-index: 2;
+  }
+
+  .figure4:hover:after{
+    content:"Download now";
+    background-color:rgba(102, 157, 246, 0.9);
+    color: white;
+    font-size: 32px;
+    z-index: 2;
+  }
+
+  .figure5:hover:after{
+    content:"Rate now";
+    background-color:rgba(102, 157, 246, 0.9);
+    color: white;
+    font-size: 32px;
+    z-index: 2;
+  }
+
+  
+
+
+  .figure1{
+    background-image: url("../../../assets/images/doc2.jpg");
+    background-blend-mode:exclusion
+}
+
+.figure2{
+  background-image: url("../../../assets/images/doc-appointment.jpg");
+}
+
+.figure3{
+  background-image: url("../../../assets/images/doc-report.jpg");
+}
+
+.figure4{
+  background-image: url("../../../assets/images/medicine.jpg");
+}
+.figure5{
+  background-image: url("../../../assets/images/rating.jpg");
+}
